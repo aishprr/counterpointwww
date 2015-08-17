@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'application'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,6 +68,10 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DEBUG = True
+
+#TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'application/templates/application'),)
 
 WSGI_APPLICATION = 'counterpointweb.wsgi.application'
 
@@ -111,8 +116,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-# Static asset configuration
-import os
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.8/howto/static-files/
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
@@ -120,3 +126,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+ 
