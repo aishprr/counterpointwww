@@ -127,7 +127,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -139,7 +139,6 @@ DATABASES = {
     }
 }
 '''
-
 import os
 import psycopg2
 import urlparse
@@ -154,4 +153,5 @@ conn = psycopg2.connect(
     host=url.hostname,
     port=url.port
 )
+'''
  
