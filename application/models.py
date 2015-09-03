@@ -16,5 +16,16 @@ class Member(models.Model):
         return self.andrewid
 
 
-#class Event(models.Model):
+class Event(models.Model):
 
+    name = models.CharField(max_length=128)
+    where = models.CharField(max_length=128)
+    when = models.DateTimeField(blank=True, null=True)
+    ticketlink = models.CharField(max_length=128, blank=True, null=True) #put in images from bootstrap showing ticket and fblink
+    fblink = models.CharField(max_length=128, blank=True, null=True)
+    description = models.CharField(max_length=2000, blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
+
+    

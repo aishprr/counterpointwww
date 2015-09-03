@@ -1,8 +1,8 @@
 from django.http import HttpRequest
 from django.shortcuts import render
-from application.models import Member
+from application.models import Member, Event
 import logging
-
+import datetime
 	
 # Standard instance of a logger with __name__
 stdlogger = logging.getLogger(__name__)
@@ -16,5 +16,6 @@ def home(request):
 	
 	info = dict()
 	info['presentMembers'] = Member.objects.filter(alumni = False)
+	info['upcomingEvents'] = Event.objects.filter(when__gt=datetime.datetime.now())
 	
 	return render(request, 'application/index.html', info)
