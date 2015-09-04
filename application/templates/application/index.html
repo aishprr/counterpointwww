@@ -18,18 +18,67 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">About</h2>
-                    <figure id="about_banner">
-                        <img src="{% static 'application/img/about/about_banner.png' %}" class="img-responsive" alt="">
-                    </figure>
+                    <h5>&nbsp</h5>
+                    
                 </div>
+                <br>
             </div>
             
-            <div class="row">
-                Counterpoint was founded in 2000 by Carolyn Weger as Carnegie Mellon's only all-female a cappella group.
+            
+            <header id="myCarousel" class="carousel slide">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
 
+                <!-- Wrapper for Slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <!-- Set the first background image using inline CSS below. -->
+                        {% with 'application/img/about/about_banner1.jpg' as image_static %}
+                        <img src="{% static image_static %}" class="img-responsive" width="1900" height="30">
+                        {% endwith %}
+                        
+                        <div class="fill about-header" style=""></div>
+                        
+                    </div>
+                    <div class="item">
+                        <!-- Set the second background image using inline CSS below. -->
+                        
+                        {% with 'application/img/about/about_banner.png' as image_static %}
+                        <img src="{% static image_static %}" class="img-responsive" width="1900" height="30">
+                        {% endwith %}
+                    </div>
+                    <div class="item">
+                        <!-- Set the third background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                        
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
+
+    </header>
+            
+            <br>
+            <div id="about-descr" align="center">
+
+                Counterpoint was founded in 2000 by Carolyn Weger as Carnegie Mellon's only all-female a cappella group.
+            
 Each year, we perform at the International Championship of Collegiate A Cappella (ICCA), The A CaPittsburgh Project benefit concert founded by Counterpoint in 2008, No Instruments Aloud, Carnival, Almost Midnight A Cappella, and countless other events.
 
 In addition to concerts, we are also available for Singing Valentines every February. We will serenade or perform a singing phone call for a person of your choice. This is a Counterpoint tradition perfect for surprising a special someone or embarrassing a friend!
+            </div>
+            <br>
+            <div id="about-descr" class="text-center">
 
 We take pride in our unique song selections, ranging in genre from barbershop to pop - and we even do some rap! Overall, we are a diverse group of girls with different personalities, interests, and goals brought together by one common thread: the love of music! </div>
 
@@ -68,7 +117,7 @@ We take pride in our unique song selections, ranging in genre from barbershop to
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Members</h2>
-                    <h3 class="section-subheading text-muted">people</h3>
+                    <h5>&nbsp</h5>
                 </div>
             </div>
             
@@ -103,69 +152,50 @@ We take pride in our unique song selections, ranging in genre from barbershop to
     </section>
 
    
-    <!-- Team Section 
-    <section id="team" class="bg-light-gray">
+    
+    <section id="follow">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Follow Us</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="{% static 'application/img/team/1.jpg' %}" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-xs-5 fa-5x">
+                    <li><a href="https://twitter.com/cmucounterpoint"><i class="fa fa-twitter"></i></a></li>
                 </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="{% static 'application/img/team/2.jpg' %}" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-xs-5 fa-5x">
+                    <li><a href="https://soundcloud.com/cmu-counterpoint"><i class="fa fa-soundcloud"></i></a>
+                    </li>
                 </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="{% static 'application/img/team/3.jpg' %}" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-xs-5 fa-5x">
+                    <li><a href="https://www.youtube.com/user/CMUCounterpoint"><i class="fa fa-youtube"></i></a>
+                    </li>
+                </div>
+                <div class="col-xs-5 fa-5x">
+                    <li><a href="https://www.facebook.com/CMUCounterpoint"><i class="fa fa-facebook"></i></a>
+                    </li>
+                </div>
+                
+            </div>
+            
+        </div>
+   
+
+    <!-- Join -->
+    <section id="join">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Join</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
+            <div class="row text-center">
+                
+                
             </div>
         </div>
-    </section>-->
+    </section>
 
     
     <!-- Contact Section -->
@@ -215,29 +245,23 @@ We take pride in our unique song selections, ranging in genre from barbershop to
 
     <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
+            
+                <div class="col-md-4 text-center">
                     <span class="copyright">Copyright &copy; Counterpoint 2015</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        <li><a href="https://twitter.com/cmucounterpoint"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        <li><a href="https://soundcloud.com/cmu-counterpoint"><i class="fa fa-soundcloud"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        <li><a href="https://www.facebook.com/CMUCounterpoint"><i class="fa fa-facebook"></i></a>
                         </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li><a href="https://www.youtube.com/user/CMUCounterpoint"><i class="fa fa-youtube"></i></a>
                         </li>
                     </ul>
                 </div>
-            </div>
+            
         </div>
     </footer>
 

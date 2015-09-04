@@ -1,0 +1,16 @@
+#about-descr { 
+
+	font-family: 'Cardo', serif;
+	margin-bottom:20px;
+	line-height:140%;
+	font-size: 22px;
+	width: calc(100%/5*4);
+	text-align: center;
+	vertical-align: center;
+	color: gray;
+	
+}
+
+body {
+	background-color: black;
+}
