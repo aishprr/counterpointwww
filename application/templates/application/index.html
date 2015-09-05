@@ -94,16 +94,18 @@ We take pride in our unique song selections, ranging in genre from barbershop to
                     <h2 class="section-heading">Upcoming Events</h2>
                 </div>
             </div>
+            <br><br>
             <div class="row text-center">
                 {% for event in upcomingEvents %}
                 <div class="col-md-4">
                     <h2 class="service-heading" style="color:white;">{{ event.name }}</h4>
-                    <h3 class="service-heading">{{ event.where }} . {{ event.when }}</h3>
+                    <h3 class="service-heading">{{ event.where }}</h3>
+                    <h4 class="service-heading">Starting {{ event.when }}</h4>
                     <p class="text-muted">{{ event.description }}</p>
                     <ul class="list-inline fa-2x">
                         <li><a target="_blank" href="{{ event.fblink }}"><i class="fa fa-facebook"></i></a>
                         </li>
-                        <li><a target="_blank" href="{{ event.fblink }}"><i class="fa fa-ticket"></i></a>
+                        <li><a target="_blank" href="{{ event.ticketlink }}"><i class="fa fa-ticket"></i></a>
                         </li>
                 </div>
                 {% endfor %}
