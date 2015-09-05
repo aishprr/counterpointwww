@@ -69,7 +69,7 @@
     </header>
             
             <br>
-            <div id="about-descr" align="center">
+            <div id="about-descr">
 
                 Counterpoint was founded in 2000 by Carolyn Weger as Carnegie Mellon's only all-female a cappella group.
             
@@ -78,7 +78,7 @@ Each year, we perform at the International Championship of Collegiate A Cappella
 In addition to concerts, we are also available for Singing Valentines every February. We will serenade or perform a singing phone call for a person of your choice. This is a Counterpoint tradition perfect for surprising a special someone or embarrassing a friend!
             </div>
             <br>
-            <div id="about-descr" class="text-center">
+            <div id="about-descr">
 
 We take pride in our unique song selections, ranging in genre from barbershop to pop - and we even do some rap! Overall, we are a diverse group of girls with different personalities, interests, and goals brought together by one common thread: the love of music! </div>
 
@@ -110,6 +110,51 @@ We take pride in our unique song selections, ranging in genre from barbershop to
         </div>
     </section>
 
+    
+
+   
+    
+    <section id="follow">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Follow Us</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 fa-4x"></div>
+                <div class="col-sm-2 fa-4x text-center">
+                    <li><a href="https://twitter.com/cmucounterpoint"><i class="fa fa-twitter"></i></a></li>
+                </div>
+                <div class="col-sm-2 fa-4x text-center">
+                    <li><a href="https://soundcloud.com/cmu-counterpoint"><i class="fa fa-soundcloud"></i></a>
+                    </li>
+                </div>
+                <div class="col-sm-2 fa-4x text-center">
+                    <li><a href="https://www.youtube.com/user/CMUCounterpoint"><i class="fa fa-youtube"></i></a>
+                    </li>
+                </div>
+                <div class="col-sm-3 fa-4x"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 fa-4x text-center"></div>
+                <div class="col-sm-2 fa-4x text-center">
+                    <li><a href="https://www.facebook.com/CMUCounterpoint"><i class="fa fa-facebook"></i></a>
+                    </li>
+                </div>
+                <div class="col-sm-2 fa-4x text-center">
+                    <li><a href="https://www.facebook.com/CMUCounterpoint"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </div>
+                <div class="col-sm-4 fa-4x"></div>
+            </div>
+
+                
+        </div>
+    </section>
+   
+
+    
     <!-- Members Section -->
 
     <section id="portfolio">
@@ -151,37 +196,6 @@ We take pride in our unique song selections, ranging in genre from barbershop to
         </div>
     </section>
 
-   
-    
-    <section id="follow">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Follow Us</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-5 fa-5x">
-                    <li><a href="https://twitter.com/cmucounterpoint"><i class="fa fa-twitter"></i></a></li>
-                </div>
-                <div class="col-xs-5 fa-5x">
-                    <li><a href="https://soundcloud.com/cmu-counterpoint"><i class="fa fa-soundcloud"></i></a>
-                    </li>
-                </div>
-                <div class="col-xs-5 fa-5x">
-                    <li><a href="https://www.youtube.com/user/CMUCounterpoint"><i class="fa fa-youtube"></i></a>
-                    </li>
-                </div>
-                <div class="col-xs-5 fa-5x">
-                    <li><a href="https://www.facebook.com/CMUCounterpoint"><i class="fa fa-facebook"></i></a>
-                    </li>
-                </div>
-                
-            </div>
-            
-        </div>
-   
-
     <!-- Join -->
     <section id="join">
         <div class="container">
@@ -190,21 +204,34 @@ We take pride in our unique song selections, ranging in genre from barbershop to
                     <h2 class="section-heading">Join</h2>
                 </div>
             </div>
-            <div class="row text-center">
-                
-                
+            <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body text-center">
+                            <h2 class="item-intro text-muted">Fall 2015</h2>
+                            <div class="col-md-4">
+                            {% with 'application/img/fresh_pitches.jpg' as image_static %}
+                            <img src="{% static image_static %}" class="img-responsive" width="500" >
+                            {% endwith %}
+                            </div>
+                            <div class="audition_deets">
+                                <p>Come to the table at the Activities Fair and talk to us!</p>
+                                <a target="_blank" href="https://docs.google.com/spreadsheets/d/14_6ZujuQIuNRvYzJnm_dAVZkx7-R_eGjOvA1FBP71nU/edit#gid=0">Sign up here!</a>
+                            </div>
+                        </div>
+                    </div>
             </div>
+            
         </div>
     </section>
 
-    
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Send us a message!</h3>
                 </div>
             </div>
             <div class="row">
@@ -242,6 +269,8 @@ We take pride in our unique song selections, ranging in genre from barbershop to
             </div>
         </div>
     </section>
+
+
 
     <footer>
         <div class="container">

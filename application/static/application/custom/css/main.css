@@ -8,9 +8,27 @@
 	text-align: center;
 	vertical-align: center;
 	color: gray;
+	margin: 0 auto;
 	
 }
 
 body {
 	background-color: black;
+}
+
+#contact { 
+
+	color: gray;
+}
+
+li { 
+
+	list-style:none;
+
+}
+
+.audition_deets {
+
+	color: gray;
+
 }
