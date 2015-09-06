@@ -1,6 +1,6 @@
 <?php
 
-require '../PHPMailerAutoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 
 // Check for empty fields
@@ -87,6 +87,7 @@ if (!$mail->send()) {
     echo "Message sent!";
     return true;
 }
+
 
 
 $email_subject = "Website Contact Form:  $name";
