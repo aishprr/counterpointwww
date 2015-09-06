@@ -20,7 +20,7 @@ $phone = $_POST['phone'];
 $message = $_POST['message'];
 
 //Create a new PHPMailer instance
-$mail = new PHPMailer;
+$mail = new PHPMailer();
 
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
@@ -41,10 +41,10 @@ $mail->Host = 'smtp.gmail.com';
 // if your network does not support SMTP over IPv6
 
 //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-$mail->Port = 587;
+$mail->Port = 465;
 
 //Set the encryption system to use - ssl (deprecated) or tls
-$mail->SMTPSecure = 'tls';
+$mail->SMTPSecure = 'ssl';
 
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
@@ -75,9 +75,6 @@ $email_body = "You have received a new message from your website contact form.\n
 
 //Replace the plain text body with one created manually
 $mail->AltBody = $email_body;
-
-//Attach an image file
-$mail->addAttachment('images/phpmailer_mini.png');
 
 //send the message, check for errors
 if (!$mail->send()) {
