@@ -76,15 +76,6 @@ TEMPLATE_DEBUG = True
 WSGI_APPLICATION = 'counterpointweb.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Internationalization
@@ -127,7 +118,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -144,7 +135,7 @@ import psycopg2
 import urlparse
 
 urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
+url = urlparse.urlparse(os.environ["HEROKU_POSTGRESQL_PURPLE_URL"])
 
 conn = psycopg2.connect(
     database=url.path[1:],
@@ -153,5 +144,12 @@ conn = psycopg2.connect(
     host=url.hostname,
     port=url.port
 )
+
 '''
- 
+POSTGRES_URL = "HEROKU_POSTGRESQL_PURPLE_URL"
+DATABASES = {'default': dj_database_url.config(default=os.environ[POSTGRES_URL])}
+'''
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'cmucounterpoint@gmail.com'
+EMAIL_HOST_PASSWORD = '######'
+EMAIL_PORT = 587

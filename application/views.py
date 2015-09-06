@@ -15,7 +15,7 @@ def home(request):
 	assert(isinstance(request, HttpRequest))
 	
 	info = dict()
-	info['presentMembers'] = Member.objects.filter(alumni = False)
+	info['presentMembers'] = Member.objects.filter(alumni = False).order_by('name')
 	info['upcomingEvents'] = Event.objects.filter(when__gt=datetime.datetime.now())
 	
 	return render(request, 'application/index.html', info)
