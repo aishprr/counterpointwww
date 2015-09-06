@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'counterpointweb.wsgi.application'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
@@ -91,21 +91,50 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-STATIC_URL = '/static/'
-
 # Parse database configuration from $DATABASE_URL
 
+###PRODUCTION (make sure that the default which is DATABASE_URL env var is the right db)
+
 import dj_database_url
-#DATABASES['default'] =  dj_database_url.config()
 
 
 DATABASES = {}
 DATABASES['default'] =  dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+
+import os
+import psycopg2
+import urlparse
+
+urlparse.uses_netloc.append("postgres")
+url = urlparse.urlparse(os.environ["HEROKU_POSTGRESQL_PURPLE_URL"])
+
+conn = psycopg2.connect(
+    database=url.path[1:],
+    user=url.username,
+    password=url.password,
+    host=url.hostname,
+    port=url.port
+)
+
+###DEVELOPMENT
+
+###localhost (aishwarya's mac postgres db)
+### while developing, pull from the heroku server into whatever dbname you used
+### and then change these and comment out the production values 
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'counterpointwww',
+        'USER': 'counterpointuser',
+        'PASSWORD': 'somuchcplowe',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+'''
+
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -124,37 +153,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, '../application/static'),
 )
 
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'counterpointwww',
-        'USER': 'counterpointuser',
-        'PASSWORD': 'somuchcplowe',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-'''
-import os
-import psycopg2
-import urlparse
-
-urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["HEROKU_POSTGRESQL_PURPLE_URL"])
-
-conn = psycopg2.connect(
-    database=url.path[1:],
-    user=url.username,
-    password=url.password,
-    host=url.hostname,
-    port=url.port
-)
-
-'''
-POSTGRES_URL = "HEROKU_POSTGRESQL_PURPLE_URL"
-DATABASES = {'default': dj_database_url.config(default=os.environ[POSTGRES_URL])}
-'''
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'cmucounterpoint@gmail.com'
 EMAIL_HOST_PASSWORD = '######'
