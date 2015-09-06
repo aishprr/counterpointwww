@@ -95,7 +95,6 @@ USE_TZ = True
 
 ###PRODUCTION (make sure that the default which is DATABASE_URL env var is the right db)
 
-'''
 import dj_database_url
 
 
@@ -117,13 +116,13 @@ conn = psycopg2.connect(
     host=url.hostname,
     port=url.port
 )
-'''
+
 ###DEVELOPMENT
 
 ###localhost (aishwarya's mac postgres db)
 ### while developing, pull from the heroku server into whatever dbname you used
 ### and then change these and comment out the production values 
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -134,7 +133,7 @@ DATABASES = {
         'PORT': '',
     }
 }
-
+'''
 
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
