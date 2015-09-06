@@ -56,13 +56,13 @@ $mail->Username = "cmucounterpoint@gmail.com";
 $mail->Password = "bringusadr3am";
 
 //Set who the message is to be sent from
-$mail->setFrom($email_address, $name);
+$mail->setFrom($email_address);
 
 //Set an alternative reply-to address
-$mail->addReplyTo($email_address, $name);
+$mail->addReplyTo($email_address);
 
 //Set who the message is to be sent to
-$mail->addAddress('countrpt@andrew.cmu.edu', 'Counterpoint');
+$mail->addAddress('countrpt@andrew.cmu.edu');
 
 //Set the subject line
 $mail->Subject = 'PHPMailer GMail SMTP test';
@@ -74,7 +74,7 @@ $mail->Subject = 'PHPMailer GMail SMTP test';
 $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
 
 //Replace the plain text body with one created manually
-$mail->AltBody = $email_body;
+$mail->Body = $email_body;
 
 //send the message, check for errors
 if (!$mail->send()) {
