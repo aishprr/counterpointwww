@@ -2,5 +2,4 @@ sftp-config.json
 venv
 *.pyc
 staticfiles
-*.jpg
 *.original
