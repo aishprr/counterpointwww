@@ -155,5 +155,5 @@ STATICFILES_DIRS = (
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'cmucounterpoint@gmail.com'
-EMAIL_HOST_PASSWORD = '######'
+EMAIL_HOST_PASSWORD = 'bringusadr3am'
 EMAIL_PORT = 587
