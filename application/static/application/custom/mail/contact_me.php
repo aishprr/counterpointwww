@@ -53,7 +53,7 @@ $mail->SMTPAuth = true;
 $mail->Username = "cmucounterpoint@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "bringusadr3am";
+$mail->Password = "sbksajbdkasjdhiewhd";
 
 //Set who the message is to be sent from
 $mail->setFrom($email_address);
