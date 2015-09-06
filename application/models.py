@@ -25,8 +25,6 @@ class Event(models.Model):
     fblink = models.CharField(max_length=128, blank=True, null=True)
     description = models.CharField(max_length=2000, blank=True, null=True)
 
-    class Meta:
-       ordering = ('-when')
 
     def __unicode__(self):
         return self.name
