@@ -1,5 +1,7 @@
 sftp-config.json
 venv
 *.pyc
+.jpg
+.gif
 staticfiles
 *.original
