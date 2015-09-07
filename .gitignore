@@ -1,7 +1,9 @@
 sftp-config.json
 venv
 *.pyc
-.jpg
-.gif
+*.jpg
+*.gif
+#just some adjustments cause I removed .jpg from the gitignore like an idiot
+member_photos
 staticfiles
 *.original
