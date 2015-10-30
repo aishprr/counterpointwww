@@ -16,6 +16,6 @@ def home(request):
 	
 	info = dict()
 	info['presentMembers'] = Member.objects.filter(alumni = False).order_by('name')
-	info['upcomingEvents'] = Event.objects.filter(when__gt=datetime.datetime.now()).order_by('when')
+	info['upcomingEvents'] = Event.objects.order_by('when')
 	
 	return render(request, 'application/index.html', info)
